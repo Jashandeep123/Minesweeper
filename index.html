@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="minesweeper-startscreen">
+            <h1 class="heading">Minesweeper</h1>
+            <button class="startscreen-btn"> Start Game</button>
+        </div>
+
+        <div class="minesweeper">
+
+            <div class="minesweeper-header">
+                <select class="minesweeper-level">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <div class="minesweeper-flag-count">
+                    🚩 0
+                </div>
+                <button class="minesweeper-restart">Restart</button>
+            </div>
+            <div class="minesweeper-board">
+                <!-- <div class="minesweeper-row row">
+                    <div class="box unrevealed revealed"></div>
+                    <div class="box unrevealed revealed"></div>
+                    <div class="box unrevealed"></div>
+                    <div class="box unrevealed"></div>
+                    <div class="box unrevealed"></div>
+                </div>
+             -->
+            </div>
+            <div class="minesweeper-endscreen">
+                <h1 class="minesweeper-endscreen-text"></h1>
+                <button class="minesweeper-endscreen-restart">Restart</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

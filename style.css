@@ -1,0 +1,215 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background-image: linear-gradient(135deg, #193803, #B9DD76); */
+    overflow: hidden;
+    position: relative;
+}
+
+.minesweeper{
+    border: 1px solid black;
+    position: relative;
+    padding: 20px;
+    border: none;
+    /* outline: none; */
+}
+
+.minesweeper-header{
+    /* position: relative; */
+    min-height: 42px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #4A752C;
+    padding: 8px;
+    color: white;
+}
+
+.minesweeper-level{
+    padding: 4px 8px;
+    font-size: 16px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.minesweeper-flag-count{
+    display: flex;
+    gap: 2px;
+    font-size: 18px;
+}
+
+.minesweeper-restart{
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+}
+
+.box{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    /* border: 1px solid black; */
+    line-height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #aad750;
+}
+
+.minesweeper-row{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* .minesweeper-row:nth-child(n) .box:nth-child(2n){
+    background-color: #aad750;
+} */
+
+.minesweeper-row:nth-child(odd) .box:nth-child(odd),
+.minesweeper-row:nth-child(even) .box:nth-child(even){
+    background-color: #B9DD76;
+}
+
+.box:hover{
+    background-color: #BFE170;
+}
+
+.box.revealed{
+    background-color: #ebcfb2;
+}
+
+.minesweeper-row:nth-child(odd) .box.revealed:nth-child(odd),
+.minesweeper-row:nth-child(even) .box.revealed:nth-child(even){
+    background-color: #E5C29f;
+}
+
+.box.text-1{
+    color: blue;
+}
+
+.box.text-2{
+    color: red;
+}
+
+.box.text-2{
+    color: darkorange;
+}
+
+.box.flag{
+    color: red;
+}
+
+.box.flag::after, .box.mine::after{
+    content: "🚩";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.box.mine::after{
+    content: "💣";
+}
+
+.minesweeper-endscreen-text{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.minesweeper-endscreen {
+    display: none; /* Hide the end screen by default */
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color:white;
+    flex-direction: column;
+}
+
+
+.minesweeper-endscreen-restart{
+    padding: 8px 16px;
+    font-size: 20px;
+    border-radius: 8px;
+    background-color: #6ceb11d2;
+    color: rgb(33, 25, 25);
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.minesweeper-endscreen-restart:hover{
+    opacity: 0.7;
+}
+
+.minesweeper-endscreen-restart:active{
+    scale: 0.96;
+    background-color: #7dce43;
+}
+
+.minesweeper-startscreen{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.minesweeper-startscreen .heading{
+    font-size: 75px;
+}
+
+.minesweeper-startscreen .startscreen-btn{
+    font-size: 28px;
+    padding: 10px 15px;
+    border-radius: 100px;
+    transition: box-shadow 0.3s ease;
+}
+
+.startscreen-btn:hover{
+    cursor: pointer;
+    /* opacity: 0.7; */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5)
+}
+
+.minesweeper-title{
+    height: 100%;
+    width: 100%;
+    /* background-image: url('https://www.google.com/logos/fnbx/minesweeper/cta.png'); */
+}
+
+.minesweeper-endGame{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.minesweeper-endGame-msg{
+    font-size: 40px;
+}
+
+.random-image {
+    z-index: -1;
+    position: absolute;
+    width: 80px;  /* Adjust size as needed */
+    height: 70px;
+    filter: blur(2px);  /* Apply blur effect */
+    opacity: 0.9;       /* Slight transparency for a subtle effect */
+}
